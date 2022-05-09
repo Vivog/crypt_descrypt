@@ -6,7 +6,7 @@ def decrypt(file, password):
     print(f'---Begin to decrypt file: {Path(file).name}---')
 
     buffer_size = 512 * 1024
-    pyAesCrypt.decryptFile(str(file), Path(file).name.strip('.crp'), password, buffer_size)
+    pyAesCrypt.decryptFile(str(file), str(file).strip('.crp'), password, buffer_size)
 
     print(f'---File {Path(file).name} is decrypt---')
     pathlib.Path.unlink(file)
